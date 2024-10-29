@@ -14,5 +14,4 @@ public class HelloWorld {
 		System.out.println ("/ \\ // \\\\ /// \\\\") ;
 		System.out.println ("This"+" program prints a\n" + "quote from the Gettysburg Address.");
 	}
-	
 }

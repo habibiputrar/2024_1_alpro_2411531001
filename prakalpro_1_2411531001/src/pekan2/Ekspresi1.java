@@ -18,5 +18,4 @@ public class Ekspresi1 {
 		System.out.println((1+3)*4);
 		System.out.println(2/3);
 	}
-
 }
