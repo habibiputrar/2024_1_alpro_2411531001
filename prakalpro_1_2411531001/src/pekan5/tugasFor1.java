@@ -49,8 +49,4 @@ public class tugasFor1 {
 		}
 	}
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> branch 'master' of https://github.com/habibiputrar/2024_1_alpro_2411531001
