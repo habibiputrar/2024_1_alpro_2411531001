@@ -28,7 +28,7 @@ public class tugasForWhile2 {
                 System.out.print("Tebakan anda salah. Apakah mau lempar dadu lagi (ya / tidak)? ");
                 String jawaban = scanner.next();
                 if (!jawaban.equalsIgnoreCase("ya")) {
-                    System.out.println("Tebakan anda benar. Anda menang setelah " + percobaan + " percobaan.");
+                    System.out.println("Anda gagal menang");
                     break;
                 }
             }
