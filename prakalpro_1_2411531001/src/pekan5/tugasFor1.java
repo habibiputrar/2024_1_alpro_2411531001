@@ -11,7 +11,7 @@ public class tugasFor1 {
 			b=c+1;
 			for(int j = 1; j<= 18;j++) {
 				if(i==1 || i==10) {
-					if(j==1 || j==18 ) {
+					if(j==1 || j==1'8 ) {
 						System.out.print("#");
 					}else {
 						System.out.print("=");
