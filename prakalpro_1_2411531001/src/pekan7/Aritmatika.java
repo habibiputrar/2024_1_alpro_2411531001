@@ -59,36 +59,29 @@ public class Aritmatika {
                 try {
                     int A1 = Integer.parseInt(A.getText());
                     int A2 = Integer.parseInt(B.getText());
-                    int hasil = 0;
+                    int hasil;
                     int op = OPcb.getSelectedIndex();
-
-                    switch(op) {
-                        case 1:
-                            hasil = A1 + A2;
-                            break;
-                        case 2: 
-                            hasil = A1 - A2;
-                            break;
-                        case 3:
-                            hasil = A1 * A2;
-                            break;
-                        case 4:
-                            if(A2 != 0) {
-                                hasil = A1 / A2;
-                            } else {
-                                C.setText("Error: Bagi 0");
-                                return;
-                            }
-                            break;
-                        case 5: 
-                            hasil = A1 % A2;
-                            break;
-                        default:
-                            C.setText("Pilih Operator");
-                            return;
+                    
+                    if(op == 1) {
+                        hasil = A1 + A2;
+                        C.setText(String.valueOf(hasil));
                     }
-
-                    C.setText(String.valueOf(hasil));
+                    if(op == 2) {
+                        hasil = A1 - A2;
+                        C.setText(String.valueOf(hasil));
+                    }
+                    if(op == 3) {
+                        hasil = A1 * A2;
+                        C.setText(String.valueOf(hasil));
+                    }
+                    if(op == 4) {
+                        hasil = A1 / A2;
+                        C.setText(String.valueOf(hasil));
+                    }
+                    if(op == 5) {
+                        hasil = A1 % A2;
+                        C.setText(String.valueOf(hasil));
+                    }
 
                 } catch(NumberFormatException ex) {
                     C.setText("Input Salah");
