@@ -1,111 +1,121 @@
 package pekan7;
 
 import java.awt.EventQueue;
+
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
+import javax.swing.text.JTextComponent;
+
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.DefaultComboBoxModel;
 
 public class Aritmatika {
 
-    private JFrame frame;
-    private JTextField A;
-    private JTextField B; 
-    private JLabel C; 
+	JFrame frame;
+	private JTextField A;
+	private JTextField B;
+	private JTextField C;
 
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    Aritmatika window = new Aritmatika();
-                    window.frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Aritmatika window = new Aritmatika();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
-    public Aritmatika() {
-        initialize();
-    }
+	/**
+	 * Create the application.
+	 */
+	public Aritmatika() {
+		initialize();
+	}
 
-    private void initialize() {
-        frame = new JFrame();
-        frame.setBounds(100, 100, 450, 300);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().setLayout(null);
-        
-        C = new JLabel("Hasil"); 
-        C.setHorizontalAlignment(SwingConstants.CENTER);
-        C.setBounds(304, 53, 86, 55);
-        frame.getContentPane().add(C);
-        
-        String[] operators = {"+", "-", "*", "/", "%"};
-        JComboBox<String> OPcb = new JComboBox<>(operators);
-        OPcb.setModel(new DefaultComboBoxModel<>(new String[] {"pilih", "+", "-", "*", "/", "%"}));
-        OPcb.setSelectedIndex(0); 
-        OPcb.setBounds(120, 70, 71, 21);
-        frame.getContentPane().add(OPcb);
-        
-        JButton btnNewButton = new JButton("Hasil");
-        btnNewButton.addActionListener(new ActionListener() {
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		A = new JTextField();
+		A.setHorizontalAlignment(SwingConstants.CENTER);
+		A.setBounds(45, 86, 75, 40);
+		frame.getContentPane().add(A);
+		A.setColumns(10);
+		
+		B = new JTextField();
+		B.setHorizontalAlignment(SwingConstants.CENTER);
+		B.setBounds(208, 86, 75, 40);
+		frame.getContentPane().add(B);
+		B.setColumns(10);
+		
+		C = new JTextField();
+		C.setHorizontalAlignment(SwingConstants.CENTER);
+		C.setBounds(327, 86, 75, 40);
+		B.setHorizontalAlignment(SwingConstants.CENTER);
+		frame.getContentPane().add(C);
+		C.setColumns(10);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Pilih", "+", "-", "*", "/", "%"}));
+		comboBox.setBounds(135, 86, 60, 40);
+		frame.getContentPane().add(comboBox);
+		
+		JLabel lblNewLabel = new JLabel("=");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(287, 86, 35, 40);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JButton btnNewButton = new JButton("Proses");
+		btnNewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                try {
-                    int A1 = Integer.parseInt(A.getText());
-                    int A2 = Integer.parseInt(B.getText());
-                    int hasil;
-                    int op = OPcb.getSelectedIndex();
-                    
-                    if(op == 1) {
-                        hasil = A1 + A2;
-                        C.setText(String.valueOf(hasil));
-                    }
-                    if(op == 2) {
-                        hasil = A1 - A2;
-                        C.setText(String.valueOf(hasil));
-                    }
-                    if(op == 3) {
-                        hasil = A1 * A2;
-                        C.setText(String.valueOf(hasil));
-                    }
-                    if(op == 4) {
-                        hasil = A1 / A2;
-                        C.setText(String.valueOf(hasil));
-                    }
-                    if(op == 5) {
-                        hasil = A1 % A2;
-                        C.setText(String.valueOf(hasil));
-                    }
-
-                } catch(NumberFormatException ex) {
-                    C.setText("Input Salah");
-                }
-            }
+            	int A1= Integer.parseInt(A.getText());
+				int A2= Integer.parseInt(B.getText());
+				int hasil;
+				int op= comboBox.getSelectedIndex();
+				if(op == 1) {
+					hasil = A1+A2;
+					C.setText(String.valueOf(hasil));
+				}
+				if(op == 2) {
+					hasil = A1-A2;
+					C.setText(String.valueOf(hasil));
+				}
+				if(op == 3) {
+					hasil = A1*A2;
+					C.setText(String.valueOf(hasil));
+				}
+				if(op == 4) {
+					hasil = A1/A2;
+					C.setText(String.valueOf(hasil));
+				}
+				if(op == 5) {
+					hasil = A1%A2;
+					C.setText(String.valueOf(hasil));
+				}
+            }	
         });
-        btnNewButton.setBounds(115, 131, 85, 21);
-        frame.getContentPane().add(btnNewButton);
-        
-        A = new JTextField();
-        A.setHorizontalAlignment(SwingConstants.CENTER);
-        A.setColumns(10);
-        A.setBounds(32, 61, 78, 38);
-        frame.getContentPane().add(A);
-        
-        B = new JTextField(); 
-        B.setHorizontalAlignment(SwingConstants.CENTER);
-        B.setColumns(10);
-        B.setBounds(201, 62, 78, 38);
-        frame.getContentPane().add(B);
-        
-        JLabel lblHasil = new JLabel("=");
-        lblHasil.setHorizontalAlignment(SwingConstants.CENTER);
-        lblHasil.setBounds(261, 53, 86, 55);
-        frame.getContentPane().add(lblHasil);
-    }
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnNewButton.setBounds(122, 147, 89, 25);
+		frame.getContentPane().add(btnNewButton);
+	}
 }
