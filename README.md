@@ -110,5 +110,3 @@ Class `Mahasiswa` pada pekan 7 digunakan oleh `PanggilMahasiswa` dan `PanggilMah
 | 5 | [Laporan Pekan 5](prakalpro_1_2411531001/src/pekan5/LAPORAN%20PRATIKUM%20ALGORITMA%20PEMROGRAMAN%20pekan%205.pdf) |
 | 6 | [Laporan Pekan 6](prakalpro_1_2411531001/src/pekan6/LAPORAN%20PRATIKUM%20ALGORITMA%20PEMROGRAMAN%20pekan%206.pdf) |
 | 7 | [Laporan Pekan 7](prakalpro_1_2411531001/src/pekan7/LAPORAN%20PRATIKUM%20ALGORITMA%20PEMROGRAMAN%20pekan%207.pdf) |
-
-Kode pekan 8 sudah tersedia di repository, sedangkan laporan PDF pekan 8 belum disertakan.
